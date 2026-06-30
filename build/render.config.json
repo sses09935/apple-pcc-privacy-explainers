@@ -1,0 +1,55 @@
+{
+  "audiences": [
+    {
+      "key": "developer",
+      "draft": "content/drafts/01-developer.md",
+      "out": "PCC-開發者版.pdf",
+      "theme": "theme-developer",
+      "docTitle": "Private Cloud Compute — 開發者版",
+      "margin": { "top": "20mm", "bottom": "20mm", "left": "22mm", "right": "22mm" }
+    },
+    {
+      "key": "power-user",
+      "draft": "content/drafts/02-power-user.md",
+      "out": "PCC-AI使用者版.pdf",
+      "theme": "theme-power-user",
+      "docTitle": "Private Cloud Compute — AI 使用者版",
+      "margin": { "top": "22mm", "bottom": "22mm", "left": "24mm", "right": "24mm" }
+    },
+    {
+      "key": "general",
+      "draft": "content/drafts/03-general-public.md",
+      "out": "PCC-普羅大眾版.pdf",
+      "theme": "theme-general",
+      "docTitle": "Private Cloud Compute — 普羅大眾版",
+      "margin": { "top": "20mm", "bottom": "20mm", "left": "22mm", "right": "22mm" }
+    },
+    {
+      "key": "developer-en",
+      "draft": "content/drafts/en/developer.md",
+      "out": "PCC-Developer-EN.pdf",
+      "theme": "theme-developer",
+      "lang": "en",
+      "docTitle": "Private Cloud Compute — Developer Edition (English)",
+      "margin": { "top": "20mm", "bottom": "20mm", "left": "22mm", "right": "22mm" }
+    },
+    {
+      "key": "ai-user-en",
+      "draft": "content/drafts/en/ai-user.md",
+      "out": "PCC-AI-User-EN.pdf",
+      "theme": "theme-power-user",
+      "lang": "en",
+      "docTitle": "Private Cloud Compute — AI User Edition (English)",
+      "margin": { "top": "22mm", "bottom": "22mm", "left": "24mm", "right": "24mm" }
+    },
+    {
+      "key": "general-en",
+      "draft": "content/drafts/en/general.md",
+      "out": "PCC-General-Public-EN.pdf",
+      "theme": "theme-general",
+      "lang": "en",
+      "docTitle": "Private Cloud Compute — General Edition (English)",
+      "margin": { "top": "20mm", "bottom": "20mm", "left": "22mm", "right": "22mm" }
+    }
+  ]
+}

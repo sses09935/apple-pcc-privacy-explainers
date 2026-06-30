@@ -1,0 +1,37 @@
+/* theme-power-user.css — 友善、清楚。雙色 + 卡片底，中密度，留白多。 */
+:root {
+  --fg: #1f2330;
+  --bg: #ffffff;
+  --muted: #6a7180;
+  --accent: #5a3ec8;          /* 主色：紫 */
+  --accent-2: #00a39a;        /* 次色：青綠 */
+  --accent-soft: #efe9fc;
+  --rule: #dcdce6;
+  --card-bg: #f4f1fb;
+  --code-bg: #f4f1fb;
+  --fs-body: 12pt;
+  --lh-body: 1.85;
+  --measure: 100%;
+  --h1-size: 23pt;
+  --h2-size: 15.5pt;
+  --h3-size: 12.5pt;
+}
+h3 { color: var(--accent-2); margin-top: 1.4em; }
+/* 每個主要章節另起一頁，留白多、好讀。章節標頭做成柔和圓角色帶（card 感），
+   比開發者版更親和——這是「隱私判斷指南」而非技術簡報。 */
+h2 {
+  break-before: page; padding: .4em .7em;
+  background: var(--accent-soft); border-bottom: none; border-radius: 10px;
+}
+li { margin-bottom: .45em; }
+figure { margin: 1.5em 0; }
+/* 表格用雙色點綴、cell 放寬，閱讀更輕鬆 */
+thead th { background: var(--accent-soft); border-bottom-color: var(--accent); }
+th, td { padding: .62em .9em; }
+table { box-shadow: 0 0 0 1px var(--rule); border-radius: 8px; overflow: hidden; }
+/* 對照表/解讀框＝卡片：圓角、內距大、淡陰影 */
+blockquote {
+  background: var(--accent-soft); border-left: 4px solid var(--accent-2);
+  border-radius: 12px; padding: .9em 1.1em; box-shadow: 0 1px 0 var(--rule);
+}
+.cover h1 { color: var(--accent); }

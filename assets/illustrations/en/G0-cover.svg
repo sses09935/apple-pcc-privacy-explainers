@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="Inter, system-ui, -apple-system, Helvetica, Arial, sans-serif">
+  <!-- phone -->
+  <rect x="120" y="80" width="120" height="200" rx="20" fill="#fff" stroke="#e8743b" stroke-width="4"/>
+  <rect x="138" y="104" width="84" height="140" rx="8" fill="#fdeee5"/>
+  <circle cx="180" cy="262" r="8" fill="#e8743b"/>
+  <!-- connection -->
+  <path d="M250 180 H430" stroke="#f2b705" stroke-width="4" stroke-dasharray="2 8" stroke-linecap="round"/>
+  <!-- glowing locked cloud -->
+  <g>
+    <circle cx="540" cy="180" r="120" fill="#fdeee5" opacity="0.55"/>
+    <path d="M470 200 a45 45 0 0 1 6 -89 a55 55 0 0 1 104 12 a40 40 0 0 1 4 77 z" fill="#fff" stroke="#e8743b" stroke-width="4"/>
+    <rect x="518" y="160" width="50" height="46" rx="8" fill="#e8743b"/>
+    <path d="M528 160 v-12 a15 15 0 0 1 30 0 v12" fill="none" stroke="#e8743b" stroke-width="5"/>
+    <circle cx="543" cy="182" r="6" fill="#fdeee5"/>
+  </g>
+</svg>

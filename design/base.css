@@ -1,0 +1,193 @@
+/* base.css — 共用排版基底（A4）。色彩/密度由 theme-*.css 以 CSS 變數覆寫。
+   CJK 字型優先（PingFang TC → Hiragino → Heiti），英文/數字 fallback。 */
+
+:root {
+  /* 由 theme 覆寫的變數，先給安全預設 */
+  --fg: #1d1d1f;
+  --bg: #ffffff;
+  --muted: #6e6e73;
+  --accent: #0066cc;
+  --accent-soft: #e8f0fe;
+  --rule: #d2d2d7;
+  --card-bg: #f5f5f7;
+  --code-bg: #eef0f2;   /* 行內 code 底（淺） */
+  --code-fg: #1d1d1f;   /* 行內 code 字 */
+  --pre-bg: #f5f5f7;    /* 程式碼框底 */
+  --pre-fg: #1d1d1f;    /* 程式碼框字 */
+  --font-body: "PingFang TC", "Hiragino Sans GB", "Heiti TC", "STHeiti", "Inter", -apple-system, sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --fs-body: 10.5pt;
+  --lh-body: 1.62;
+  --measure: 100%;
+  --h1-size: 22pt;
+  --h2-size: 15pt;
+  --h3-size: 12pt;
+}
+
+@page {
+  size: A4;
+  /* 邊界由 Playwright margin 控制（render.config.json），此處留給保險 */
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: var(--fg);
+  background: var(--bg);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.page-content { max-width: var(--measure); margin: 0 auto; }
+
+/* 文件標題＝獨立標題頁：給足上方留白，顯得是刻意的封面而非擠在頂端。
+   頂端細 accent rule 讓封面像「簡報／白皮書」而非單純大字（顏色隨 theme 區分受眾）。 */
+main > h1:first-child {
+  margin-top: 9%;
+  padding-top: .5em;
+  border-top: 4px solid var(--accent);
+}
+
+/* 標題階層 */
+h1, h2, h3, h4 { font-weight: 700; line-height: 1.25; color: var(--fg); }
+h1 { font-size: var(--h1-size); margin: 0 0 .6em; letter-spacing: -0.01em; }
+h2 {
+  font-size: var(--h2-size); margin: 1.7em 0 .55em;
+  padding-bottom: .25em; border-bottom: 2px solid var(--accent);
+  break-after: avoid;
+}
+h3 { font-size: var(--h3-size); margin: 1.25em 0 .4em; color: var(--accent); break-after: avoid; }
+h4 { font-size: 11pt; margin: 1em 0 .35em; }
+
+p { margin: 0 0 .7em; orphans: 2; widows: 2; }
+strong { font-weight: 700; }
+a { color: var(--accent); text-decoration: none; }
+
+ul, ol { margin: 0 0 .8em; padding-left: 1.4em; }
+li { margin: 0 0 .3em; }
+
+/* 區塊引用 = callout（宣稱 vs 可驗證 / 紅線） */
+blockquote {
+  margin: 1em 0; padding: .7em 1em;
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  color: var(--fg);
+}
+blockquote p:last-child { margin-bottom: 0; }
+
+/* 表格 */
+table {
+  width: 100%; border-collapse: collapse; margin: 1em 0;
+  font-size: .95em; break-inside: avoid;
+}
+th, td { text-align: left; padding: .5em .7em; border-bottom: 1px solid var(--rule); vertical-align: top; }
+thead th { background: var(--card-bg); border-bottom: 2px solid var(--accent); font-weight: 700; }
+tbody tr:nth-child(even) { background: color-mix(in srgb, var(--card-bg) 45%, transparent); }
+/* 長表跨頁時：重複表頭、列不被切斷 */
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+
+/* 程式碼 */
+code {
+  font-family: var(--font-mono); font-size: .9em;
+  background: var(--code-bg); color: var(--code-fg);
+  padding: .1em .35em; border-radius: 4px;
+  /* 長 token（如 mobile_obliterator）可斷行，避免溢出或被當整塊 */
+  word-break: break-word;
+}
+pre {
+  background: var(--pre-bg); padding: .85em 1em; border-radius: 8px;
+  overflow-x: auto; border: 1px solid var(--rule); break-inside: avoid; margin: 1em 0;
+}
+pre code { background: none; color: var(--pre-fg); padding: 0; font-size: 8.8pt; line-height: 1.5; }
+
+/* 圖片與圖說：圖框＝可辨識的「圖卡」，與內文區隔；圖與圖說綁在一起不跨頁切斷。
+   背景用極淡 accent-soft，邊框用 rule，三主題顏色不同 → 受眾差異一目了然。 */
+figure {
+  margin: 1.2em 0; text-align: center; break-inside: avoid;
+  border: 1px solid var(--rule); border-radius: 10px;
+  padding: 10pt 10pt 8pt;
+  background: color-mix(in srgb, var(--accent-soft) 32%, var(--bg));
+}
+figure img { max-width: 100%; height: auto; border-radius: 6px; }
+figcaption {
+  font-size: .85em; color: var(--muted); margin-top: .6em;
+  padding-top: .5em; border-top: 1px solid var(--rule);
+}
+
+/* 來源引用上標＝小型 badge（monospace + accent 底/框），讓 claim 可追溯性肉眼可見、
+   但克制不喧賓奪主。顏色隨 theme 變（開發者冷藍／使用者紫／大眾暖橘）。 */
+.fnref {
+  font-family: var(--font-mono);
+  font-size: .66em; vertical-align: super; line-height: 0;
+  font-weight: 700; color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  border-radius: 5px; padding: .14em .3em; margin: 0 .07em;
+}
+/* 文末來源附錄：提高可讀性（字略大、行距鬆、編號 monospace 強調），方便核對來源。 */
+.endnotes { margin-top: 2em; padding-top: 1em; border-top: 2px solid var(--accent); font-size: .88em; }
+.endnotes h2 { border: none; font-size: 13pt; }
+.endnotes ol { padding-left: 1.6em; }
+.endnotes li { margin-bottom: .45em; color: var(--fg); }
+.endnotes li strong { font-family: var(--font-mono); color: var(--accent); font-weight: 700; }
+.endnotes a { word-break: break-all; }
+
+/* 封面：第一個 h1 區段 */
+.cover { break-after: page; padding-top: 18%; }
+.cover h1 { font-size: 30pt; line-height: 1.15; }
+.cover h3 { color: var(--muted); font-weight: 500; }
+
+/* 分頁控制 */
+h2 { break-before: auto; }
+.pagebreak { break-before: page; }
+hr { border: none; border-top: 1px solid var(--rule); margin: 1.5em 0; }
+
+/* hr 作為章節分隔時，避免在頂端留白過多 */
+hr + h2 { margin-top: .4em; }
+
+/* ── Callout 家族 + status pill（v1.3 component contract）──────────────────
+   語意化、克制的 callout：boundary/warning/misconception 用低彩度語意色，
+   不做刺眼警報。預設 .callout = 既有 blockquote 外觀（accent-soft + accent 左框）。
+   觸發：Markdown `> [!NOTE|BOUNDARY|WARNING|MISCONCEPTION|SUMMARY]`（見 design/component-contract.md）。 */
+:root {
+  --callout-boundary-bg: #f1f5f9;  --callout-boundary-border: #475569; /* slate：嚴肅、非警報 */
+  --callout-warning-bg:  #fdf1e3;  --callout-warning-border:  #b45309; /* 克制 amber */
+  --callout-mis-bg:      #fdf0f2;  --callout-mis-border:      #9f1239; /* 低彩度 rose */
+  --status-claim:        #475569;  /* 「Apple 宣稱」中性 slate */
+  --status-verifiable:   #0f766e;  /* 「可獨立驗證」沉穩 teal（不暗示絕對安全） */
+}
+.callout { /* 等同 blockquote 基底，供帶 class 的 callout 使用 */
+  margin: 1em 0; padding: .7em 1em;
+  background: var(--accent-soft); border-left: 4px solid var(--accent);
+  border-radius: 6px; color: var(--fg); break-inside: avoid;
+}
+.callout p:last-child { margin-bottom: 0; }
+.callout-label { font-weight: 700; display: block; margin-bottom: .3em; letter-spacing: .01em; }
+.callout-note { background: var(--accent-soft); border-left-color: var(--accent); }
+.callout-boundary { background: var(--callout-boundary-bg); border-left-color: var(--callout-boundary-border); }
+.callout-boundary .callout-label { color: var(--callout-boundary-border); }
+.callout-warning { background: var(--callout-warning-bg); border-left-color: var(--callout-warning-border); }
+.callout-warning .callout-label { color: var(--callout-warning-border); }
+.callout-misconception { background: var(--callout-mis-bg); border-left-color: var(--callout-mis-border); }
+.callout-misconception .callout-label { color: var(--callout-mis-border); }
+.callout-summary { background: color-mix(in srgb, var(--accent-soft) 70%, var(--bg)); border-left-color: var(--accent); }
+.callout-summary .callout-label { color: var(--accent); }
+/* 章首先講結論 / 章末 takeaway 的語意別名（目前以 .callout-summary 實現） */
+.section-summary { /* 等同 .callout-summary */ }
+.takeaway-list { /* 有序清單樣式由 ol 既有規則承載 */ }
+
+/* status pill：標一句話的認識論強度（Apple 宣稱 vs 可獨立驗證），徽章語彙沿用 .fnref */
+.status-pill {
+  font-family: var(--font-mono); font-size: .72em; font-weight: 700;
+  padding: .1em .45em; border-radius: 999px; vertical-align: .08em;
+  border: 1px solid currentColor; white-space: nowrap;
+}
+.status-pill.claim { color: var(--status-claim); }
+.status-pill.verifiable { color: var(--status-verifiable); }

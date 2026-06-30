@@ -1,0 +1,42 @@
+/* theme-general.css — 親切、圖像。柔和多彩，低密度，大量留白，大字。 */
+:root {
+  --fg: #2a2730;
+  --bg: #fffdfa;
+  --muted: #7a7480;
+  --accent: #e8743b;          /* 暖橘 */
+  --accent-2: #f2b705;        /* 暖黃 */
+  --accent-soft: #fdeee5;
+  --rule: #ece4dc;
+  --card-bg: #fbf3ec;
+  --code-bg: #fbf3ec;
+  --fs-body: 13pt;            /* 大字 */
+  --lh-body: 1.85;           /* 鬆 */
+  --h1-size: 28pt;
+  --h2-size: 20pt;
+  --h3-size: 15pt;
+}
+body { font-weight: 400; }
+h1, h2 { letter-spacing: -0.01em; }
+h2 { border-bottom: none; color: var(--accent); margin-top: 1.4em; }
+/* 大眾版多為跨頁大圖：每個 h2（章節）另起新頁、給足留白 */
+h2 { break-before: page; padding-top: 6%; }
+/* 章節標題下方加一截暖色「螢光筆」短線，親民、不嚴肅，與另兩版明顯不同 */
+h2::after {
+  content: ""; display: block; width: 2.4em; height: 6px;
+  border-radius: 3px; background: var(--accent-2); margin-top: .3em;
+}
+.cover h2 { break-before: auto; padding-top: 0; }
+/* 圖＝閱讀卡：更大圓角、暖色底、留白多，像繪本插圖卡 */
+figure {
+  border-radius: 18px; padding: 14pt;
+  background: color-mix(in srgb, var(--accent-soft) 48%, var(--bg));
+  border-color: color-mix(in srgb, var(--accent) 18%, var(--rule));
+}
+figure img { border-radius: 14px; }
+figcaption { border-top-color: color-mix(in srgb, var(--accent) 18%, var(--rule)); }
+/* 表格降低壓迫感：淺框、暖表頭、cell 放寬 */
+thead th { background: var(--accent-soft); border-bottom-color: var(--accent-2); }
+th, td { padding: .6em .85em; border-bottom-color: var(--rule); }
+blockquote { background: var(--accent-soft); border-left: 5px solid var(--accent-2); border-radius: 14px; font-size: 1.05em; padding: 1em 1.2em; }
+/* 「依據」頁回到中性、緊湊，但維持可讀（來源仍清楚可見） */
+.endnotes, .provenance { font-size: .85em; }

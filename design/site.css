@@ -1,0 +1,287 @@
+/* site.css — GitHub Pages / Firebase Hosting 網站樣式（響應式、現代化）。 */
+:root{
+  --bg:#ffffff; --bg-soft:#f7f8fa; --fg:#16181d; --muted:#5b616e; --rule:#e9eaee;
+  --accent:#1d4ed8; --accent-2:#3b82f6; --accent-soft:#eef3ff; --accent-ink:#0b2e7a;
+  --code-bg:#eef1f6; --code-fg:#1e3a8a; --pre-bg:#0d1117; --pre-fg:#e6edf3; --pre-cmt:#8b98a5;
+  --shadow:0 1px 2px rgba(16,24,40,.04), 0 8px 24px rgba(16,24,40,.06);
+  --maxw:760px;
+  --font-body:"PingFang TC","Hiragino Sans GB","Heiti TC","Noto Sans TC",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+  --font-mono:"SF Mono","JetBrains Mono","IBM Plex Mono",ui-monospace,monospace;
+}
+body.dev{--accent:#1d4ed8;--accent-2:#3b82f6;--accent-soft:#eef3ff;--accent-ink:#0b2e7a}
+body.power{--accent:#6d28d9;--accent-2:#8b5cf6;--accent-soft:#f2ecfe;--accent-ink:#3b0f73}
+body.general{--accent:#ea6a2c;--accent-2:#f59e0b;--accent-soft:#fdf0e6;--accent-ink:#8a3b12}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--fg);background:var(--bg);font-family:var(--font-body);
+  font-size:clamp(16px,0.55vw + 14.2px,18px);line-height:1.78;letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-wrap:break-word}
+::selection{background:var(--accent-soft)}
+
+/* ── 導覽列 ── */
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.82);
+  backdrop-filter:saturate(1.6) blur(12px);-webkit-backdrop-filter:saturate(1.6) blur(12px);
+  border-bottom:1px solid var(--rule)}
+.nav .in{max-width:980px;margin:0 auto;padding:.7em 1.3em;display:flex;gap:1.3em;align-items:center;font-size:14.5px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;transition:color .15s;position:relative}
+.nav a:hover{color:var(--accent)}
+.nav .brand{font-weight:800;color:var(--fg);letter-spacing:-.01em}
+.nav .brand .dot{color:var(--accent)}
+.nav .spacer{flex:1}
+.nav .cta{color:var(--accent);font-weight:600}
+
+main{max-width:var(--maxw);margin:0 auto;padding:2.6em 1.3em 5em}
+
+/* ── 排版 ── */
+h1,h2,h3,h4{line-height:1.32;letter-spacing:-.012em;scroll-margin-top:76px;font-weight:800}
+h1{font-size:2.15em;margin:.1em 0 .5em}
+h2{font-size:1.5em;margin:2.1em 0 .55em;padding-bottom:.28em;border-bottom:2px solid var(--accent)}
+h3{font-size:1.2em;margin:1.5em 0 .4em;color:var(--accent-ink);font-weight:700}
+p{margin:0 0 .9em}
+a{color:var(--accent);text-underline-offset:2px;text-decoration-color:color-mix(in srgb,var(--accent) 35%,transparent)}
+a:hover{text-decoration-color:var(--accent)}
+ul,ol{padding-left:1.45em}li{margin:.3em 0}
+strong{font-weight:700}
+hr{border:none;border-top:1px solid var(--rule);margin:2em 0}
+
+.anchor{margin-left:.45em;opacity:0;color:var(--muted);text-decoration:none;font-weight:400;font-size:.62em;transition:opacity .15s}
+h1:hover .anchor,h2:hover .anchor,h3:hover .anchor{opacity:.55}
+:target{scroll-margin-top:80px}
+.endnotes li:target,h2:target,h3:target{background:var(--accent-soft);border-radius:8px}
+
+/* ── 引言 / callout ── */
+blockquote{margin:1.4em 0;padding:.95em 1.15em .95em 1.2em;background:var(--accent-soft);
+  border-left:4px solid var(--accent);border-radius:0 12px 12px 0;color:var(--fg)}
+blockquote p:last-child{margin:0}
+
+/* ── 表格 ── */
+.tablewrap{overflow-x:auto;margin:1.3em 0;border:1px solid var(--rule);border-radius:12px}
+table{width:100%;border-collapse:collapse;font-size:.95em}
+th,td{text-align:left;padding:.62em .85em;border-bottom:1px solid var(--rule);vertical-align:top}
+tr:last-child td{border-bottom:none}
+thead th{background:var(--bg-soft);border-bottom:2px solid var(--accent);font-weight:700;white-space:nowrap}
+tbody tr:hover{background:color-mix(in srgb,var(--accent-soft) 50%,transparent)}
+
+/* ── 程式碼 ── */
+code{font-family:var(--font-mono);font-size:.86em;background:var(--code-bg);color:var(--code-fg);
+  padding:.13em .42em;border-radius:6px;word-break:break-word}
+pre{background:var(--pre-bg);color:var(--pre-fg);padding:1.05em 1.2em;border-radius:12px;
+  overflow-x:auto;line-height:1.6;box-shadow:var(--shadow);font-size:.92em}
+pre code{background:none;color:var(--pre-fg);padding:0}
+
+/* ── 圖：圖卡框（淡 accent 底 + 邊框 + 圓角），與內文清楚區隔；圖說加細上分隔線 ── */
+figure{margin:1.8em 0;text-align:center;border:1px solid var(--rule);border-radius:16px;
+  padding:1.1em;background:color-mix(in srgb,var(--accent-soft) 28%,var(--bg))}
+figure img{max-width:100%;height:auto;border-radius:12px}
+figcaption{color:var(--muted);font-size:.9em;margin-top:.7em;padding-top:.55em;border-top:1px solid var(--rule)}
+
+/* ── 註腳：來源引用＝可點擊的 source pill（monospace + accent 底/框），hover/focus 有明確回饋 ── */
+.fnref{font-size:.7em;vertical-align:super;line-height:0;font-weight:700}
+.fnref a{font-family:var(--font-mono);color:var(--accent);text-decoration:none;
+  background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);
+  border-radius:6px;padding:.12em .36em;margin:0 .06em;
+  transition:background .12s,border-color .12s,color .12s}
+.fnref a:hover,.fnref a:focus-visible{background:color-mix(in srgb,var(--accent) 16%,var(--bg));
+  border-color:var(--accent);outline:none}
+.endnotes{margin-top:2.8em;padding-top:1.3em;border-top:2px solid var(--accent);font-size:.92em}
+.endnotes h2{border:none;padding:0;margin:.2em 0 .6em}
+.endnotes li{margin:.45em 0}.endnotes a{word-break:break-all}
+.endnotes li strong{font-family:var(--font-mono);color:var(--accent)}
+
+/* ── 文件頂部：標題卡 + TOC ── */
+.doc-top{background:linear-gradient(180deg,var(--accent-soft),transparent);
+  border:1px solid var(--rule);border-radius:16px;padding:1.4em 1.5em;margin:0 0 1.6em}
+.doc-top .kicker{font-size:.82em;font-weight:700;color:var(--accent);letter-spacing:.04em;text-transform:uppercase}
+.doc-top h1{margin:.15em 0 .5em;border:none}
+.doc-top .pdf{display:inline-flex;align-items:center;gap:.4em;font-weight:600;font-size:.92em;
+  background:var(--accent);color:#fff;padding:.5em .95em;border-radius:999px;text-decoration:none}
+.doc-top .pdf:hover{filter:brightness(1.06)}
+.toc{margin:1.8em 0;border:1px solid var(--rule);border-radius:12px;padding:1em 1.2em;background:var(--bg-soft)}
+.toc .toc-h{font-size:.8em;font-weight:700;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.4em}
+.toclist{margin:0;padding:0;list-style:none;columns:2;column-gap:2em}
+.toclist li{margin:.2em 0;break-inside:avoid;padding-left:.9em;position:relative}
+.toclist li::before{content:"›";position:absolute;left:0;color:var(--accent);opacity:.6}
+.toc a{text-decoration:none;color:var(--fg)}.toc a:hover{color:var(--accent)}
+@media(max-width:560px){.toclist{columns:1}}
+
+/* ── 首頁 hero + 卡片 ── */
+.hero{max-width:980px;margin:1.4em auto 0;padding:3.2em 1.6em 2.6em;text-align:center;
+  border:1px solid var(--rule);border-radius:24px;
+  background:radial-gradient(120% 90% at 50% 0%,var(--accent-soft),transparent 60%),var(--bg)}
+.hero .eyebrow{display:inline-block;font-size:.82em;font-weight:700;color:var(--accent);
+  background:var(--accent-soft);padding:.35em .9em;border-radius:999px;letter-spacing:.03em}
+.hero h1{font-size:clamp(28px,5.4vw,46px);margin:.45em 0 .3em;border:none;letter-spacing:-.02em;line-height:1.18}
+.hero p.lede{font-size:clamp(16px,1.4vw,19px);color:var(--muted);max-width:680px;margin:0 auto 1.4em}
+.hero .actions{display:flex;gap:.7em;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:.65em 1.3em;border-radius:999px;font-weight:600;text-decoration:none;font-size:.96em}
+.btn.primary{background:var(--accent);color:#fff}.btn.primary:hover{filter:brightness(1.06)}
+.btn.ghost{border:1px solid var(--rule);color:var(--fg)}.btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+.section{max-width:980px;margin:0 auto;padding:1.4em 1.3em}
+.section h2{font-size:1.5em}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1em;margin:1.4em 0}
+.card{position:relative;border:1px solid var(--rule);border-radius:16px;padding:1.3em 1.35em;background:var(--bg);
+  box-shadow:var(--shadow);transition:transform .16s,border-color .16s,box-shadow .16s;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--c1),var(--c2))}
+.card.dev{--c1:#1d4ed8;--c2:#60a5fa}.card.power{--c1:#6d28d9;--c2:#a78bfa}.card.general{--c1:#ea6a2c;--c2:#f59e0b}
+.card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--c1) 50%,var(--rule));box-shadow:0 10px 30px rgba(16,24,40,.12)}
+.card:focus-within{border-color:var(--c1);box-shadow:0 10px 30px rgba(16,24,40,.12)}
+.card .ico{font-size:1.7em;line-height:1}
+.card h3{margin:.45em 0 .25em;font-size:1.22em;color:var(--fg)}
+.card .who{color:var(--muted);font-size:.9em;margin-bottom:.5em}
+.card-main{display:block;text-decoration:none;color:inherit}
+.card .links{margin-top:.7em;display:flex;gap:1em;font-size:.9em;font-weight:600}
+.card .links a{text-decoration:none}
+
+.foot{max-width:980px;margin:2em auto 0;padding:1.8em 1.3em 3.5em;color:var(--muted);font-size:.86em;border-top:1px solid var(--rule)}
+.foot a{color:var(--muted)}.foot a:hover{color:var(--accent)}
+
+/* ──────────── 裝置自適應與效能 ──────────── */
+/* 離畫面內容延後渲染：長文（開發者版）首屏更快、捲動更省資源 */
+figure{content-visibility:auto;contain-intrinsic-size:1px 340px}
+
+/* 低階裝置 / 減動效 / 省資料 / 探針掉幀 → 剝除昂貴效果（模糊、動畫、位移、陰影），省電省 CPU */
+html.lowfx *,html.lowfx *::before,html.lowfx *::after{animation:none!important;transition:none!important}
+html.lowfx{scroll-behavior:auto}
+html.lowfx .nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff}
+html.lowfx .card,html.lowfx pre{box-shadow:none}
+html.lowfx .card:hover{transform:none;box-shadow:0 0 0 1px var(--accent)}
+html.lowfx .btn.primary:hover,html.lowfx .doc-top .pdf:hover{filter:none}
+
+/* 系統層級偏好（即使 JS 關閉也生效）*/
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+@media (prefers-reduced-data: reduce){
+  .nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff}
+}
+
+/* ──────────── 響應式排版 ──────────── */
+@media (max-width:640px){
+  main{padding:1.8em 1.05em 4em}
+  .hero{padding:2.2em 1.05em .6em}
+  .section,.foot{padding-left:1.05em;padding-right:1.05em}
+  h2{margin-top:1.6em}
+  .doc-top{padding:1.1em 1.15em}
+  .nav .in{gap:.85em;font-size:13.5px}
+}
+
+/* 來源註腳回跳鍵（↩ 跳回內文第一次引用處） */
+.backref{ text-decoration:none; opacity:.5; margin-left:.3em; font-weight:700; }
+.backref:hover{ opacity:1; color:var(--accent); }
+
+/* ── 受眾差異（克制）：色相由 body.dev/.power/.general 切換；此處再給密度／圓角／字級微差 ──
+   Developer：技術簡報、kicker 用 monospace、引用框較不圓。
+   Power User：友善、卡片更圓。
+   General：字略大、圓角更柔、留白更多。 */
+body.dev .doc-top .kicker{font-family:var(--font-mono);letter-spacing:.02em}
+body.dev blockquote{border-radius:0 8px 8px 0}
+body.power .card,body.power .doc-top,body.power blockquote{border-radius:18px}
+body.general main{font-size:1.04em}
+body.general .doc-top{border-radius:22px}
+body.general figure{border-radius:20px}
+
+/* TOC 與導覽：hover/active 視覺回饋更清楚（克制，不加動畫） */
+.toclist li:hover::before{opacity:1}
+.toc a:hover{text-decoration:underline;text-underline-offset:2px}
+.nav a:hover{color:var(--accent)}
+
+/* ── Callout 家族 + status pill + 查核模式（v1.3 component contract）────────── */
+:root{
+  --callout-boundary-bg:#f1f5f9; --callout-boundary-border:#475569;
+  --callout-warning-bg:#fdf1e3;  --callout-warning-border:#b45309;
+  --callout-mis-bg:#fdf0f2;       --callout-mis-border:#9f1239;
+  --status-claim:#475569; --status-verifiable:#0f766e;
+}
+.callout{margin:1.4em 0;padding:.95em 1.15em .95em 1.2em;background:var(--accent-soft);
+  border-left:4px solid var(--accent);border-radius:0 12px 12px 0;color:var(--fg)}
+.callout p:last-child{margin:0}
+.callout-label{font-weight:700;display:block;margin-bottom:.3em}
+.callout-note{background:var(--accent-soft);border-left-color:var(--accent)}
+.callout-boundary{background:var(--callout-boundary-bg);border-left-color:var(--callout-boundary-border)}
+.callout-boundary .callout-label{color:var(--callout-boundary-border)}
+.callout-warning{background:var(--callout-warning-bg);border-left-color:var(--callout-warning-border)}
+.callout-warning .callout-label{color:var(--callout-warning-border)}
+.callout-misconception{background:var(--callout-mis-bg);border-left-color:var(--callout-mis-border)}
+.callout-misconception .callout-label{color:var(--callout-mis-border)}
+.callout-summary{background:color-mix(in srgb,var(--accent-soft) 75%,var(--bg));border-left-color:var(--accent)}
+.callout-summary .callout-label{color:var(--accent-ink)}
+body.power .callout{border-radius:0 18px 18px 0}
+body.dev .callout{border-radius:0 8px 8px 0}
+
+.status-pill{font-family:var(--font-mono);font-size:.74em;font-weight:700;padding:.12em .5em;
+  border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+.status-pill.claim{color:var(--status-claim)}
+.status-pill.verifiable{color:var(--status-verifiable)}
+
+/* ── 閱讀模式 / 查核模式（Reading / Audit mode）────────────────────────────
+   Reading：正文優先，來源／邊界標記降低干擾（不消失）。
+   Audit：來源、邊界、誤解、限制、metadata 明顯浮出，便於查核 claim↔source。
+   狀態載於 <html data-reader-mode="reading|audit">；無 JS 時靜態預設＝reading。
+   只改呈現，不改事實、不改 [S0X] 數量。 */
+.reader-tools{display:flex;align-items:center;justify-content:flex-end;gap:.7em;flex-wrap:wrap;margin:.3em 0 0}
+.reader-mode-hint{font-size:.8em;color:var(--muted)}
+.reader-mode-toggle{font:inherit;font-size:.82em;font-weight:600;cursor:pointer;
+  color:var(--accent);background:var(--bg);border:1px solid var(--rule);border-radius:999px;
+  padding:.32em .9em;transition:color .15s,border-color .15s,background .15s}
+.reader-mode-toggle::before{content:"📖 ";font-size:.95em}
+.reader-mode-toggle:hover,.reader-mode-toggle:focus-visible{border-color:var(--accent);background:var(--accent-soft);outline:none}
+
+/* ---- Reading mode：來源／次要元素退到背景 ---- */
+html[data-reader-mode="reading"] .fnref a{opacity:.55;font-weight:500;
+  border-color:color-mix(in srgb,var(--accent) 18%,transparent);
+  background:color-mix(in srgb,var(--accent) 5%,transparent);box-shadow:none}
+html[data-reader-mode="reading"] .callout-boundary,
+html[data-reader-mode="reading"] .callout-misconception,
+html[data-reader-mode="reading"] .callout-warning{opacity:.86}
+html[data-reader-mode="reading"] .status-pill{opacity:.8;font-weight:600}
+
+/* ---- Audit mode：來源／邊界／限制浮出 ---- */
+html[data-reader-mode="audit"] .reader-mode-toggle{color:#fff;background:var(--accent);border-color:var(--accent)}
+html[data-reader-mode="audit"] .reader-mode-toggle::before{content:"🔍 "}
+html[data-reader-mode="audit"] .reader-mode-hint{color:var(--accent-ink);font-weight:600}
+/* source pill 一眼可掃描 */
+html[data-reader-mode="audit"] .fnref a{opacity:1;font-weight:700;border-width:1.5px;
+  border-color:var(--accent);background:color-mix(in srgb,var(--accent) 16%,var(--bg));
+  box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 12%,transparent)}
+/* boundary / misconception / warning callout 明顯浮出（粗左邊框＋外圈） */
+html[data-reader-mode="audit"] .callout-boundary,
+html[data-reader-mode="audit"] .callout-misconception,
+html[data-reader-mode="audit"] .callout-warning{border-left-width:6px;
+  box-shadow:0 0 0 1px color-mix(in srgb,currentColor 10%,transparent),0 6px 18px rgba(16,24,40,.06)}
+html[data-reader-mode="audit"] .callout-boundary{background:color-mix(in srgb,var(--callout-boundary-border) 11%,var(--bg))}
+html[data-reader-mode="audit"] .callout-misconception{background:color-mix(in srgb,var(--callout-mis-border) 10%,var(--bg))}
+html[data-reader-mode="audit"] .callout-warning{background:color-mix(in srgb,var(--callout-warning-border) 10%,var(--bg))}
+html[data-reader-mode="audit"] .status-pill{opacity:1;font-weight:700;
+  box-shadow:0 0 0 2px color-mix(in srgb,currentColor 12%,transparent)}
+/* TOC 與標題卡：審稿時更結構化 */
+html[data-reader-mode="audit"] .toc{border-color:var(--accent);border-left:4px solid var(--accent);background:var(--accent-soft)}
+html[data-reader-mode="audit"] .doc-top{box-shadow:inset 5px 0 0 var(--accent)}
+/* 來源附錄與頁尾 metadata 更易掃描 */
+html[data-reader-mode="audit"] .endnotes{border-top-color:var(--accent)}
+html[data-reader-mode="audit"] .endnotes li strong{box-shadow:0 1px 0 var(--accent)}
+html[data-reader-mode="audit"] .foot{color:var(--fg);border-top:2px solid var(--accent)}
+/* 低效能裝置仍保留差異，但拿掉較貴的陰影 */
+html.lowfx[data-reader-mode="audit"] .callout-boundary,
+html.lowfx[data-reader-mode="audit"] .callout-warning,
+html.lowfx[data-reader-mode="audit"] .callout-misconception,
+html.lowfx[data-reader-mode="audit"] .status-pill,
+html.lowfx[data-reader-mode="audit"] .fnref a{box-shadow:none}
+
+/* .table-wrap：component-contract 規範名，等同既有 .tablewrap */
+.table-wrap{overflow-x:auto;margin:1.3em 0;border:1px solid var(--rule);border-radius:12px}
+
+/* TOC 手機版收合：不佔滿首屏（限高捲動） */
+@media(max-width:640px){
+  .toc{max-height:42vh;overflow:auto}
+  .toclist{columns:1}
+}
+/* reader-route 卡片的「讀多久 / 深度」標示 */
+.card .meta{display:flex;flex-wrap:wrap;gap:.5em;margin:.1em 0 .2em;font-size:.82em;color:var(--muted)}
+.card .meta span{background:var(--bg-soft);border:1px solid var(--rule);border-radius:999px;padding:.08em .6em}
+
+/* 語言切換（繁中 ↔ English）：清楚但不喧賓奪主；連到對應頁面而非首頁 */
+.nav .language-switcher{color:var(--accent);font-weight:600;border:1px solid var(--rule);border-radius:999px;padding:.14em .75em;transition:border-color .15s,background .15s}
+.nav .language-switcher:hover,.nav .language-switcher:focus-visible{border-color:var(--accent);background:var(--accent-soft);outline:none}

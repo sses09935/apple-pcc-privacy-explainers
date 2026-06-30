@@ -1,0 +1,39 @@
+/* theme-developer.css — 精確、技術。單色 + 冷調強調色，高密度。 */
+:root {
+  --fg: #14161a;
+  --bg: #ffffff;
+  --muted: #5b6470;
+  --accent: #0a5ad6;          /* 冷調藍 */
+  --accent-soft: #eaf1fd;
+  --rule: #d4d8de;
+  --card-bg: #f2f4f7;
+  --code-bg: #e7ecf3;          /* 行內 code：淺藍灰底 */
+  --code-fg: #0a3a86;          /* 行內 code：深藍字（可讀） */
+  --pre-bg: #0f1419;           /* 程式碼框：深色，技術感 */
+  --pre-fg: #e6edf3;
+  --fs-body: 11.5pt;
+  --lh-body: 1.8;
+  --h1-size: 23pt;
+  --h2-size: 16pt;
+  --h3-size: 12.5pt;
+}
+/* 深色程式碼框 */
+pre { background: var(--pre-bg); border-color: #1f2630; }
+pre code .cmt { color: #8b98a5; }
+/* 章節為單位的技術參考：每個 h2 章節另起一頁，給標題充足空間。
+   左側冷藍 accent bar ＋ 既有底線 → 像結構化的技術章節標頭。 */
+h2 {
+  letter-spacing: -0.01em; break-before: page; margin-top: .2em; padding-top: .2em;
+  border-left: 4px solid var(--accent); padding-left: .55em;
+}
+h3 { margin-top: 1.5em; }
+li { margin-bottom: .42em; }
+figure { margin: 1.4em 0; }
+.cover h1 { color: var(--accent); }
+/* 技術簡報感：表頭用冷藍 accent 底、框線明確；comparison table 更易掃讀 */
+thead th { background: var(--accent-soft); border-bottom-color: var(--accent); }
+th, td { border-bottom-color: var(--rule); }
+/* 引用／邊界框：技術版較不圓、左邊框較粗，貼近「note / 邊界提示」語氣 */
+blockquote { border-left-width: 5px; border-radius: 4px; }
+/* 首章（摘要）不必硬分頁，緊接標題頁 */
+main > h1 + blockquote + hr + h2 { break-before: auto; }

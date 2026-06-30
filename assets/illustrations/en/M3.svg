@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="Inter, system-ui, -apple-system, Helvetica, Arial, sans-serif">
+  <text x="360" y="36" text-anchor="middle" font-size="18" fill="#e8743b" font-weight="700">A receipt anyone can verify</text>
+
+  <!-- public board -->
+  <rect x="220" y="70" width="280" height="180" rx="12" fill="#fdeee5" stroke="#e8743b" stroke-width="3"/>
+  <text x="360" y="98" text-anchor="middle" font-size="12" fill="#7a7480">Public record (append-only)</text>
+  <line x1="245" y1="120" x2="475" y2="120" stroke="#e8743b" stroke-width="2"/>
+  <line x1="245" y1="150" x2="475" y2="150" stroke="#e8743b" stroke-width="2"/>
+  <line x1="245" y1="180" x2="475" y2="180" stroke="#e8743b" stroke-width="2"/>
+  <line x1="245" y1="210" x2="420" y2="210" stroke="#e8743b" stroke-width="2"/>
+  <text x="360" y="278" text-anchor="middle" font-size="14" fill="#2a2730">The software actually used, out in the open</text>
+
+  <!-- people checking with drawn magnifiers -->
+  <g fill="#f2b705">
+    <circle cx="90" cy="150" r="20"/><rect x="72" y="176" width="36" height="40" rx="9"/>
+    <circle cx="630" cy="150" r="20"/><rect x="612" y="176" width="36" height="40" rx="9"/>
+  </g>
+  <text x="90"  y="234" text-anchor="middle" font-size="12" fill="#2a2730">Researcher</text>
+  <text x="630" y="234" text-anchor="middle" font-size="12" fill="#2a2730">Anyone</text>
+  <!-- magnifiers pointing at board -->
+  <g stroke="#2a2730" stroke-width="4" fill="none">
+    <circle cx="150" cy="150" r="13"/><line x1="159" y1="159" x2="172" y2="172" stroke-linecap="round"/>
+    <circle cx="570" cy="150" r="13"/><line x1="561" y1="159" x2="548" y2="172" stroke-linecap="round"/>
+  </g>
+</svg>

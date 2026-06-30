@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" font-family="Inter, system-ui, -apple-system, Helvetica, Arial, sans-serif">
+  <!-- glowing cloud with lock -->
+  <circle cx="380" cy="130" r="120" fill="#fdeee5" opacity="0.5"/>
+  <path d="M300 158 a48 48 0 0 1 8 -95 a58 58 0 0 1 110 13 a42 42 0 0 1 4 82 z" fill="#fff" stroke="#e8743b" stroke-width="4"/>
+  <rect x="352" y="112" width="56" height="50" rx="8" fill="#e8743b"/>
+  <path d="M362 112 v-13 a18 18 0 0 1 36 0 v13" fill="none" stroke="#e8743b" stroke-width="5"/>
+  <circle cx="380" cy="136" r="7" fill="#fdeee5"/>
+  <!-- user holding the only key -->
+  <circle cx="150" cy="150" r="28" fill="#f2b705"/>
+  <rect x="124" y="184" width="52" height="52" rx="12" fill="#f2b705"/>
+  <text x="150" y="262" text-anchor="middle" font-size="13" fill="#2a2730">Only you have the key</text>
+  <g transform="translate(225,150) rotate(10)">
+    <circle cx="0" cy="0" r="10" fill="none" stroke="#caa204" stroke-width="4"/>
+    <rect x="9" y="-3" width="30" height="6" fill="#caa204"/>
+    <rect x="33" y="3" width="4" height="9" fill="#caa204"/>
+    <rect x="26" y="3" width="4" height="7" fill="#caa204"/>
+  </g>
+  <text x="380" y="262" text-anchor="middle" font-size="13" fill="#e8743b" font-weight="700">Not even we can open it</text>
+</svg>

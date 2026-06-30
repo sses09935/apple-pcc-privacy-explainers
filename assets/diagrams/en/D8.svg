@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="Inter, system-ui, -apple-system, Helvetica, Arial, sans-serif">
+  <text x="16" y="30" font-size="11.7" fill="#0a5ad6">2026: PCC on Google Cloud (requirements unchanged)</text>
+  <rect x="24" y="56" width="672" height="200" rx="14" fill="none" stroke="#5b6470" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="40" y="80" font-size="10.8" fill="#5b6470">Google Cloud data center (NVIDIA GPU) — Apple fully retains control of PCC software</text>
+
+  <rect x="48" y="100" width="200" height="80" rx="12" fill="#eaf1fd" stroke="#0a5ad6" stroke-width="2"/>
+  <text x="148" y="130" text-anchor="middle" font-size="11.3" fill="#14161a">Per-request network resolution</text>
+  <text x="148" y="150" text-anchor="middle" font-size="9.0" fill="#5b6470">Dedicated namespace</text>
+  <text x="148" y="165" text-anchor="middle" font-size="9.0" fill="#5b6470">Dedicated process</text>
+
+  <rect x="270" y="100" width="200" height="80" rx="12" fill="#f2f4f7" stroke="#0a5ad6" stroke-width="2"/>
+  <text x="370" y="130" text-anchor="middle" font-size="11.3" fill="#14161a">confidential VM</text>
+  <text x="370" y="150" text-anchor="middle" font-size="9.0" fill="#5b6470">attested keys</text>
+  <text x="370" y="165" text-anchor="middle" font-size="9.0" fill="#5b6470">Isolated from external input</text>
+
+  <rect x="492" y="100" width="180" height="80" rx="12" fill="#eaf1fd" stroke="#0a5ad6" stroke-width="2"/>
+  <text x="582" y="130" text-anchor="middle" font-size="11.3" fill="#14161a">Hardware ledger</text>
+  <text x="582" y="150" text-anchor="middle" font-size="9.0" fill="#5b6470">append-only, verifiable</text>
+  <text x="582" y="165" text-anchor="middle" font-size="9.0" fill="#5b6470">≥2 independent-vendor roots of trust</text>
+
+  <text x="360" y="222" text-anchor="middle" font-size="10.8" fill="#14161a">The device only trusts PCC software cryptographically signed by Apple</text>
+  <text x="360" y="244" text-anchor="middle" font-size="9.9" fill="#c62828">Expansion ≠ handing data to Google to use freely</text>
+</svg>

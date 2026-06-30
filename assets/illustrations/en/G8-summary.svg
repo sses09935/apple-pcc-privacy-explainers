@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" font-family="Inter, system-ui, -apple-system, Helvetica, Arial, sans-serif">
+  <!-- 1: empty room (used → cleared) -->
+  <g transform="translate(120,90)">
+    <rect x="-70" y="-50" width="140" height="100" rx="12" fill="#fffdfa" stroke="#e8743b" stroke-width="3.5"/>
+    <path d="M-44 14 L44 14" stroke="#ece4dc" stroke-width="3"/>
+    <text x="0" y="6" text-anchor="middle" font-size="13" fill="#7a7480">— empty —</text>
+  </g>
+  <text x="120" y="180" text-anchor="middle" font-size="14" fill="#2a2730" font-weight="700">Cleared after use</text>
+  <text x="120" y="202" text-anchor="middle" font-size="11" fill="#7a7480">Your stuff leaves no trace</text>
+
+  <!-- 2: padlock -->
+  <g transform="translate(360,90)">
+    <rect x="-46" y="-12" width="92" height="74" rx="12" fill="#fdeee5" stroke="#e8743b" stroke-width="3.5"/>
+    <path d="M-28 -12 v-18 a28 28 0 0 1 56 0 v18" fill="none" stroke="#e8743b" stroke-width="6"/>
+    <circle cx="0" cy="20" r="9" fill="#e8743b"/>
+  </g>
+  <text x="360" y="180" text-anchor="middle" font-size="14" fill="#2a2730" font-weight="700">Locked</text>
+  <text x="360" y="202" text-anchor="middle" font-size="11" fill="#7a7480">Even its makers cannot open it</text>
+
+  <!-- 3: receipt with check -->
+  <g transform="translate(600,90)">
+    <rect x="-46" y="-54" width="92" height="108" rx="8" fill="#fff" stroke="#e8743b" stroke-width="3.5"/>
+    <line x1="-30" y1="-34" x2="30" y2="-34" stroke="#ece4dc" stroke-width="3"/>
+    <line x1="-30" y1="-16" x2="30" y2="-16" stroke="#ece4dc" stroke-width="3"/>
+    <line x1="-30" y1="2" x2="14" y2="2" stroke="#ece4dc" stroke-width="3"/>
+    <path d="M-22 30 L-8 44 L24 12" fill="none" stroke="#2e7d32" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="600" y="180" text-anchor="middle" font-size="14" fill="#2a2730" font-weight="700">Verifiable</text>
+  <text x="600" y="202" text-anchor="middle" font-size="11" fill="#7a7480">Someone can check for you</text>
+</svg>

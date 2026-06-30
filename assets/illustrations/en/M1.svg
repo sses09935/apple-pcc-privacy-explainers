@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="Inter, system-ui, -apple-system, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="m1a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e8743b"/>
+    </marker>
+  </defs>
+  <text x="360" y="36" text-anchor="middle" font-size="18" fill="#e8743b" font-weight="700">A room that clears itself after use</text>
+
+  <!-- before -->
+  <rect x="60" y="80" width="220" height="170" rx="14" fill="#fdeee5" stroke="#e8743b" stroke-width="3"/>
+  <rect x="100" y="150" width="60" height="60" rx="6" fill="#f2b705" opacity="0.85"/>
+  <rect x="180" y="130" width="60" height="80" rx="6" fill="#e8743b" opacity="0.7"/>
+  <circle cx="135" cy="120" r="16" fill="#e8743b" opacity="0.6"/>
+  <text x="170" y="278" text-anchor="middle" font-size="14" fill="#2a2730">While processing your request</text>
+
+  <line x1="300" y1="165" x2="420" y2="165" stroke="#e8743b" stroke-width="3" marker-end="url(#m1a)"/>
+  <text x="360" y="152" text-anchor="middle" font-size="12" fill="#7a7480">When done</text>
+
+  <!-- after (empty) -->
+  <rect x="440" y="80" width="220" height="170" rx="14" fill="#fffdfa" stroke="#e8743b" stroke-width="3"/>
+  <text x="550" y="175" text-anchor="middle" font-size="15" fill="#7a7480">— empty —</text>
+  <text x="550" y="278" text-anchor="middle" font-size="14" fill="#2a2730">Nothing kept afterward</text>
+</svg>

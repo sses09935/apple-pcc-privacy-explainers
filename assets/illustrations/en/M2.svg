@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="Inter, system-ui, -apple-system, Helvetica, Arial, sans-serif">
+  <text x="360" y="36" text-anchor="middle" font-size="18" fill="#e8743b" font-weight="700">A box only you have the key to</text>
+
+  <!-- box with lock -->
+  <rect x="290" y="120" width="160" height="130" rx="12" fill="#fdeee5" stroke="#e8743b" stroke-width="3"/>
+  <rect x="338" y="168" width="44" height="46" rx="6" fill="#e8743b"/>
+  <path d="M347 168 v-10 a13 13 0 0 1 26 0 v10" fill="none" stroke="#e8743b" stroke-width="5"/>
+  <circle cx="360" cy="188" r="6" fill="#fdeee5"/>
+  <text x="360" y="280" text-anchor="middle" font-size="14" fill="#2a2730">Your data</text>
+
+  <!-- user with drawn key (left) -->
+  <circle cx="120" cy="150" r="26" fill="#f2b705"/>
+  <rect x="96" y="182" width="48" height="48" rx="10" fill="#f2b705"/>
+  <text x="120" y="256" text-anchor="middle" font-size="14" fill="#2a2730">You (hold the key)</text>
+  <line x1="158" y1="172" x2="286" y2="186" stroke="#2e7d32" stroke-width="3"/>
+  <!-- key -->
+  <g transform="translate(196,168) rotate(12)">
+    <circle cx="0" cy="0" r="9" fill="none" stroke="#caa204" stroke-width="4"/>
+    <rect x="8" y="-2.5" width="26" height="5" fill="#caa204"/>
+    <rect x="28" y="2" width="4" height="8" fill="#caa204"/>
+    <rect x="22" y="2" width="4" height="6" fill="#caa204"/>
+  </g>
+
+  <!-- admin without key (right) -->
+  <circle cx="600" cy="150" r="26" fill="#cfcad2"/>
+  <rect x="576" y="182" width="48" height="48" rx="10" fill="#cfcad2"/>
+  <text x="600" y="256" text-anchor="middle" font-size="14" fill="#2a2730">Admin / Apple</text>
+  <line x1="454" y1="186" x2="572" y2="172" stroke="#c62828" stroke-width="3" stroke-dasharray="6 5"/>
+  <g stroke="#c62828" stroke-width="5" stroke-linecap="round">
+    <line x1="503" y1="171" x2="523" y2="191"/>
+    <line x1="523" y1="171" x2="503" y2="191"/>
+  </g>
+  <text x="600" y="280" text-anchor="middle" font-size="12" fill="#c62828">Cannot open it</text>
+</svg>

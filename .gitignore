@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# OS
+.DS_Store
+
+# Build intermediates
+*.tmp.html
+build/.cache/
+
+# generated PDFs (published as GitHub Release assets, not tracked in the repo)
+dist/
+
+# visual-evidence artifacts / screenshots (not tracked in the repo)
+artifacts/
+
+# generated HTML site (built by Pages workflow / Firebase)
+site/
+
+# firebase
+.firebase/
+firebase-debug.log
